@@ -1,0 +1,46 @@
+{
+  "name": "kinetoast",
+  "version": "1.0.0",
+  "description": "Zero-markup, strictly logic-driven headless notification and toast layout engine with mathematical stack coordinates, queue management, and pauseable timers.",
+  "keywords": [
+    "toast",
+    "notification",
+    "headless",
+    "zero-markup",
+    "layout-engine",
+    "state-machine",
+    "reactive",
+    "ui-headless",
+    "stack-coordinates",
+    "framework-agnostic"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "types",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.js test/*.test.cjs",
+    "prepublishOnly": "npm run build && npm test"
+  }
+}
